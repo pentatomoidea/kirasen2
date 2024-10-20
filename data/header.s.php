@@ -1,0 +1,1 @@
+<a href="/"><h1 class="bbs_title"><?=htmlspecialchars(STD_BBS_NAME)?></h1></a><br>

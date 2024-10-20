@@ -1,0 +1,11 @@
+Options -Indexes
+ErrorDocument 403 http://%{SERVER_NAME}/
+ErrorDocument 404 http://%{SERVER_NAME}/
+
+RewriteEngine On
+RewriteRule ^data/.* / [R=301,L]
+RewriteRule ^lib/.* / [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9]+)(/|/([-_,a-zA-Z0-9]+))?(/|/([-_,a-zA-Z0-9]+))?$ index.php?__T=$1&__A=$3&__P=$5 [L]
+
